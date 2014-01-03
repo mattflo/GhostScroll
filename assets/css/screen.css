@@ -424,6 +424,10 @@ li {
     max-width: 700px;
     margin: 0 auto;
 }
+/* override percent width for site-head-content inner */
+#site-head-content.inner {
+    width: auto;
+}
 
 /* Centres vertically yo. (IE8+) */
 .vertical {
@@ -444,11 +448,17 @@ li {
     height: 100%;
     margin-bottom: 0rem;
     text-align: center;
-    color: #fff;
+    color: #333; /* using dark font in title and description*/
     background: rgb(0, 153, 204) no-repeat center center;
     background-size: cover;
 }
 
+/* adding opaque white backgound behind title and description so it reads better on top of image*/
+#site-head-content {
+    background-color: rgba(300, 300, 300, 0.6);
+    display: inline-block;
+    padding: 0 12px 6px;
+}
 #site-head:after {
 
 }
@@ -483,7 +493,7 @@ li {
     margin: 0;
     font-size: 1.8rem;
     line-height: 1.5em;
-    font-weight: 300;
+    font-weight: 400; /* making description stand out a bit more */
     font-family: 'Roboto Slab', serif;
     letter-spacing: 0;
 }

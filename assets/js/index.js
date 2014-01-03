@@ -18,13 +18,23 @@ var $post = $('.post'),
 		}, 1000);
     }
     $(document).ready(function(){
+        var colors = [
+            ['#f2efe8','#222'],     //offwhite
+            ['#0099cc','white'],    //light blue
+            ['#d3d3d3','#222'],    //light gray
+            ['#669999','white'],     //soft light green
+            ['#0f6755','white'],    //darkish green
+            ['#b48484','#222']      //soft light red
+            //darker colors don't work well with the menu font color
+            // ['#0c324d','white'],    //darkish blue
+        ];
+        var count = colors.length;
      
         $postholder.each(function (e) {
-        	if(e % 2 != 0)
-        		$(this).css({
-                    'background': '#0099cc',
-                    'color'     : 'white',
-                })
+    		$(this).css({
+                'background': colors[(e % count)][0],
+                'color'     : colors[(e % count)][1],
+            })
         })
 
         $postafter.each(function (e) {
